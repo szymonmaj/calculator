@@ -7,10 +7,29 @@
     <script type="text/javascript" th:src="@{/js/action.js}"></script>
 </head>
 <body>
+<div align="center">
+    <h1>User Registration</h1>
+    <form action="#" th:action="@{/}" method="post" th:object="${user}">
+        <label>A:</label>
+        <input type="text" th:field="*{a}" /><br/>
 
-<h1>Hello</h1>
-<p th:text="'Hrlrlr ' + ${hello} + ' jajaja'"/>
-<button type="button">Show</button>
+        <label>B:</label>
+        <input type="text" th:field="*{b}" /><br/>
+        <br/>
 
+        <button type="submit">Register</button>
+    </form>
+</div>
+
+<!--<h1>Hello</h1>-->
+<!--<p th:text="'Hrlrlr ' + ${hello} + ' jajaja'"/>-->
+<!--<form th:action="@{/}">-->
+<!--    <input type="text" th:name="participant"/>-->
+<!--    <input type="submit"/>-->
+<!--</form>-->
+<!--<form th:action="@{/}">-->
+<!--    <button type="submit" th:name="action" th:value="in">check-in</button>-->
+<!--    <button type="submit" th:name="action" th:value="out">check-out</button>-->
+<!--</form>-->
 </body>
 </html>

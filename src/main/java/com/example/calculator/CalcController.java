@@ -13,32 +13,63 @@ import static java.util.Arrays.asList;
 @Controller
 public class CalcController {
     @GetMapping("/")
-    public String showForm(Model model) {
-        User user = new User();
-        model.addAttribute("user", user);
-        return "calc";
+    public String showForm() {
+//        User user = new User();
+//        model.addAttribute("user", user);
+        return "start";
     }
 
-    @GetMapping("/adding")
-    public String showForm2(Model model) {
+    @GetMapping("/dodawanie")
+    public String showForm3(Model model) {
         User user = new User();
         model.addAttribute("user", user);
+        return "dodawanie";
+    }
+
+    @GetMapping("/odejmowanie")
+    public String showForm5(Model model) {
+        User user = new User();
+        model.addAttribute("user", user);
+        return "odejmowanie";
+    }
+
+    @GetMapping("/mnozenie")
+    public String showForm6(Model model) {
+        User user = new User();
+        model.addAttribute("user", user);
+        return "mnozenie";
+    }
+
+    @GetMapping("/dzielenie")
+    public String showForm7(Model model) {
+        User user = new User();
+        model.addAttribute("user", user);
+        return "dzielenie";
+    }
+
+    @PostMapping("/dodawanie")
+    public String submitForm(@ModelAttribute("user") User user) {
+        System.out.println(user);
         return "adding";
     }
 
-    @PostMapping("/")
-    public String submitForm(@ModelAttribute("user") User user) {
+    @PostMapping("/odejmowanie")
+    public String submitForm3(@ModelAttribute("user") User user) {
         System.out.println(user);
-        return "register_success";
+        return "subtracting";
     }
 
-    @PostMapping("/adding")
-    public String submitForm2(@ModelAttribute("user") User user) {
+    @PostMapping("/mnozenie")
+    public String submitForm4(@ModelAttribute("user") User user) {
         System.out.println(user);
-        return "register_success";
+        return "multiplying";
     }
 
-
+    @PostMapping("/dzielenie")
+    public String submitForm5(@ModelAttribute("user") User user) {
+        System.out.println(user);
+        return "division";
+    }
 
 //    public double a = 10;
 //    public double b = 5;

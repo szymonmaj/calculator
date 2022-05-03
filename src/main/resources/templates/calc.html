@@ -3,12 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
-    <link th:href = "@{/css/main.css}" rel="stylesheet">
+    <link rel="stylesheet" href="/main.css" />
+<!--    <link th:href = "@{/css/main.css}" rel="stylesheet">-->
     <script type="text/javascript" th:src="@{/js/action.js}"></script>
 </head>
 <body>
 <div align="center">
-    <h1>User Registration</h1>
+    <h1>Kalkulator</h1>
     <form action="#" th:action="@{/}" method="post" th:object="${user}">
         <label>A:</label>
         <input type="text" th:field="*{a}" /><br/>
@@ -17,8 +18,11 @@
         <input type="text" th:field="*{b}" /><br/>
         <br/>
 
-        <button type="submit">Register</button>
+        <button type="submit">Oblicz</button>
+        <button type="reset">Kasuj</button>
+        <a href="/adding" class="btn right">Log in</a>
     </form>
+
 </div>
 
 <!--<h1>Hello</h1>-->

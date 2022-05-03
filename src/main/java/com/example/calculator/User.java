@@ -1,35 +1,43 @@
 package com.example.calculator;
 
+import java.math.BigDecimal;
+
 public class User {
-private int a;
-private int b;
-public int add(){
-    c = a + b;
-    return c;
+private double a;
+private double b;
+
+public double add(){
+    return a + b;
 };
 
-    public int getC() {
-        return c;
-    }
+public double sub(){
+    return a - b;
+};
 
-    public void setC(int c) {
-        this.c = c;
-    }
-    private int c;
+public double multi(){
+    return a * b;
+};
 
-    public int getA() {
+public double div(){
+    if (b != 0){
+    return a / b;}
+    else { return 0;
+    }
+};
+
+    public double getA() {
         return a;
     }
 
-    public void setA(int a) {
+    public void setA(double a) {
         this.a = a;
     }
 
-    public int getB() {
+    public double getB() {
         return b;
     }
 
-    public void setB(int b) {
+    public void setB(double b) {
         this.b = b;
     }
 

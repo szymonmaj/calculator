@@ -19,11 +19,25 @@ public class CalcController {
         return "calc";
     }
 
+    @GetMapping("/adding")
+    public String showForm2(Model model) {
+        User user = new User();
+        model.addAttribute("user", user);
+        return "adding";
+    }
+
     @PostMapping("/")
     public String submitForm(@ModelAttribute("user") User user) {
         System.out.println(user);
         return "register_success";
     }
+
+    @PostMapping("/adding")
+    public String submitForm2(@ModelAttribute("user") User user) {
+        System.out.println(user);
+        return "register_success";
+    }
+
 
 
 //    public double a = 10;

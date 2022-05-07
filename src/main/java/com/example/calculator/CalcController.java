@@ -48,7 +48,8 @@ public class CalcController {
     }
 
     @PostMapping("/dodawanie")
-    public String submitForm(@ModelAttribute("user") User user) {
+    public String submitForm(@ModelAttribute("user") User user, String zzzz) {
+        System.out.println(zzzz);
         System.out.println(user);
         return "adding";
     }

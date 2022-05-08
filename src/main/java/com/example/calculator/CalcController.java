@@ -13,9 +13,9 @@ import static java.util.Arrays.asList;
 @Controller
 public class CalcController {
     @GetMapping("/")
-    public String showForm() {
-//        User user = new User();
-//        model.addAttribute("user", user);
+    public String showForm(Model model) {
+        User user = new User();
+        model.addAttribute("user", user);
         return "start";
     }
 
@@ -71,6 +71,24 @@ public class CalcController {
         System.out.println(user);
         return "division";
     }
+
+    @PostMapping("/")
+    public String submitForm6(@ModelAttribute("user") User user, @RequestParam(required = false) String name) {
+        System.out.println(user);
+        if (name.equals("+")){
+            return "adding";
+        }
+        if (name.equals("-")){
+            return "subtracting";
+        }
+        if (name.equals("*")){
+            return "multiplying";
+        }
+        else {
+            return "division";
+        }
+    }
+
 
 //    public double a = 10;
 //    public double b = 5;

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pl" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
@@ -7,9 +7,26 @@
 </head>
 <body>
 <h1>Kalkulator</h1>
-<button><a href="/dodawanie" class="btn right">Dodawanie</a></button><br/>
-<button><a href="/odejmowanie" class="btn right">Odejmowanie</a></button><br/>
-<button><a href="/mnozenie" class="btn right">Mnozenie</a></button><br/>
-<button><a href="/dzielenie" class="btn right">Dzielenie</a></button><br/>
+<!--<button><a href="/dodawanie" class="btn right">Dodawanie</a></button><br/>-->
+<!--<button><a href="/odejmowanie" class="btn right">Odejmowanie</a></button><br/>-->
+<!--<button><a href="/mnozenie" class="btn right">Mnozenie</a></button><br/>-->
+<!--<button><a href="/dzielenie" class="btn right">Dzielenie</a></button><br/>-->
+
+<form action="#" th:action="@{/}" method="post" th:object="${user}">
+    <label>A:</label>
+    <input type="text" th:field="*{a}" /><br/>
+
+    <label>B:</label>
+    <input type="text" th:field="*{b}" /><br/>
+    <br/>
+    <input type="submit" value="+" name="name"/>&nbsp;
+    <input type="submit" value="-" name="name"/>&nbsp;
+    <input type="submit" value="*" name="name"/>&nbsp;
+    <input type="submit" value="/" name="name"/><br/>
+    <button type="reset">Kasuj</button>
+</form>
+
+
+
 </body>
 </html>

@@ -8,8 +8,7 @@
 
 h1, h2, h3 {
   font-family: 'Roboto Slab', serif;
-  color: green;
-}
+    }
 
 button {
         padding: 5px;
@@ -32,3 +31,7 @@ span {
         width: 200px;
         text-align: left;
     }
+
+h1 {
+  color: green;
+   }

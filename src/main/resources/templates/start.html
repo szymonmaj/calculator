@@ -28,11 +28,17 @@
 
 <div align="center">
     <h1>Wyniki:</h1>
-    <br/>
-    <span th:if="${user.C == '+'}"><span>Dodawanie:</span><span th:text="${user.add}"></span></span><br/>
-    <span th:if="${user.C == '-'}"><span>Odejmowanie:</span><span th:text="${user.sub}"></span></span><br/>
-    <span th:if="${user.C == '*'}"><span>Mnożenie:</span><span th:text="${user.multi}"></span></span><br/>
-    <span th:if="${user.C == '/'}"><span>Dzielenie:</span><span th:text="${user.div}"></span></span><br/>
+    <div th:switch="${user.C}">
+        <p th:case="'+'"><span>Dodawanie:</span><span th:text="${user.add}"></span></p>
+        <p th:case="'-'"><span>Odejmowanie:</span><span th:text="${user.sub}"></span></p>
+        <p th:case="'*'"><span>Mnożenie:</span><span th:text="${user.multi}"></span></p>
+        <p th:case="'/'"><span>Dzielenie:</span><span th:text="${user.div}"></span></p>
+        <p th:case="*"> </p>
+    </div>
+<!--    <span th:if="${user.C == '+'}"><span>Dodawanie:</span><span th:text="${user.add}"></span></span><br/>-->
+<!--    <span th:if="${user.C == '-'}"><span>Odejmowanie:</span><span th:text="${user.sub}"></span></span><br/>-->
+<!--    <span th:if="${user.C == '*'}"><span>Mnożenie:</span><span th:text="${user.multi}"></span></span><br/>-->
+<!--    <span th:if="${user.C == '/'}"><span>Dzielenie:</span><span th:text="${user.div}"></span></span><br/>-->
     <button><a href="/" class="btn right">Zeruj</a></button>
 </div>
 

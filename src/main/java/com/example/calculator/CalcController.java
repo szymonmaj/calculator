@@ -76,16 +76,20 @@ public class CalcController {
     public String submitForm6(@ModelAttribute("user") User user, @RequestParam(required = false) String name) {
         System.out.println(user);
         if (name.equals("+")){
-            return "adding";
+            user.C = "+";
+            return "start";
         }
         if (name.equals("-")){
-            return "subtracting";
+            user.C = "-";
+            return "start";
         }
         if (name.equals("*")){
-            return "multiplying";
+            user.C = "*";
+            return "start";
         }
         else {
-            return "division";
+            user.C = "/";
+            return "start";
         }
     }
 

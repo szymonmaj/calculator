@@ -23,10 +23,18 @@
     <input type="submit" value="-" name="name"/>&nbsp;
     <input type="submit" value="*" name="name"/>&nbsp;
     <input type="submit" value="/" name="name"/><br/>
-    <button type="reset">Kasuj</button>
+<!--    <button type="reset">Kasuj</button>-->
 </form>
 
-
+<div align="center">
+    <h1>Wyniki:</h1>
+    <br/>
+    <span th:if="${user.C == '+'}"><span>Dodawanie:</span><span th:text="${user.add}"></span></span><br/>
+    <span th:if="${user.C == '-'}"><span>Odejmowanie:</span><span th:text="${user.sub}"></span></span><br/>
+    <span th:if="${user.C == '*'}"><span>Mnożenie:</span><span th:text="${user.multi}"></span></span><br/>
+    <span th:if="${user.C == '/'}"><span>Dzielenie:</span><span th:text="${user.div}"></span></span><br/>
+    <button><a href="/" class="btn right">Zeruj</a></button>
+</div>
 
 </body>
 </html>

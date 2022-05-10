@@ -5,18 +5,14 @@ import java.math.BigDecimal;
 public class User {
 private double a;
 private double b;
-
+public String C;
 public double add(){
     return a + b;
 };
 
-public double sub(){
-    return a - b;
-};
+public double sub() { return a - b; };
 
-public double multi(){
-    return a * b;
-};
+public double multi() { return a * b; };
 
 public double div(){
     if (b != 0){

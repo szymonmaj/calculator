@@ -1,11 +1,16 @@
 package com.example.calculator;
 
-import java.math.BigDecimal;
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.Size;
 
 public class User {
 private double a;
 private double b;
-public String C;
+    @NotBlank
+    @Size(max=3, message="Wrong")
+public String C = "o";
+
+
 public double add(){
     return a + b;
 };

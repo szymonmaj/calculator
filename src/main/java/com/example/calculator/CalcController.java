@@ -2,8 +2,10 @@ package com.example.calculator;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 
+import javax.validation.Valid;
 import java.awt.*;
 import java.math.BigDecimal;
 import java.util.List;
@@ -73,7 +75,7 @@ public class CalcController {
     }
 
     @PostMapping("/")
-    public String submitForm6(@ModelAttribute("user") User user, @RequestParam(required = false) String name) {
+    public String submitForm6(@ModelAttribute @Valid User user, @RequestParam(required = false) String name) {
         System.out.println(user);
         if (name.equals("+")){
             user.C = "+";
@@ -92,7 +94,6 @@ public class CalcController {
             return "start";
         }
     }
-
 
 //    public double a = 10;
 //    public double b = 5;

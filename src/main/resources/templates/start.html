@@ -6,7 +6,7 @@
     <link rel="stylesheet" href="/main.css" />
 </head>
 <body>
-<h1>Kalkulator</h1>
+<h1 th:replace="fragments :: header1"></h1>
 <!--<button><a href="/dodawanie" class="btn right">Dodawanie</a></button><br/>-->
 <!--<button><a href="/odejmowanie" class="btn right">Odejmowanie</a></button><br/>-->
 <!--<button><a href="/mnozenie" class="btn right">Mnozenie</a></button><br/>-->
@@ -33,13 +33,13 @@
         <p th:case="'-'"><span>Odejmowanie:</span><span th:text="${user.sub}"></span></p>
         <p th:case="'*'"><span>Mnożenie:</span><span th:text="${user.multi}"></span></p>
         <p th:case="'/'"><span>Dzielenie:</span><span th:text="${user.div}"></span></p>
-        <p th:case="*"> </p>
+        <p th:case="*"> </p><br/>
     </div>
 <!--    <span th:if="${user.C == '+'}"><span>Dodawanie:</span><span th:text="${user.add}"></span></span><br/>-->
 <!--    <span th:if="${user.C == '-'}"><span>Odejmowanie:</span><span th:text="${user.sub}"></span></span><br/>-->
 <!--    <span th:if="${user.C == '*'}"><span>Mnożenie:</span><span th:text="${user.multi}"></span></span><br/>-->
 <!--    <span th:if="${user.C == '/'}"><span>Dzielenie:</span><span th:text="${user.div}"></span></span><br/>-->
-    <button><a href="/" class="btn right">Zeruj</a></button>
+    <button th:replace="fragments :: button1"></button>
 </div>
 
 </body>
